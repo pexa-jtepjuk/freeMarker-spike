@@ -20,4 +20,29 @@ class CustomerService {
             )
         )
     }
+
+    fun getTitleDetails(): TitleDetailsDto {
+        return TitleDetailsDto(
+                "Title1",
+                "Details1",
+                listOf(
+                    Address(street = "s1", city = "c1"),
+                    Address(street = "s2", city = "c2")
+                )
+            )
+    }
+
+
 }
+
+
+data class TitleDetailsDto(
+    val title: String,
+    val details: String,
+    val addresses: List<Address>
+)
+
+data class Address (
+    val street: String,
+    val city: String,
+)
